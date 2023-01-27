@@ -4,8 +4,8 @@ export default async (request: Request, context: Context) => {
   const url = new URL(request.url);
 
   // Look for the query parameter, and return if we don't find it
-  if (url.searchParams.get("method") !== "transform") {
-    return context.rewrite('/');
+  if (url.searchParams.get("page") !== "one") {
+    return context.rewrite("/posts/one-more-post");
   }
   console.log(`Transforming the response from this ${url}`);
 
