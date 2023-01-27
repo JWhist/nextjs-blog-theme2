@@ -5,7 +5,7 @@ export default async (request: Request, context: Context) => {
 
   // Look for the query parameter, and return if we don't find it
   if (url.searchParams.get("method") !== "transform") {
-    return context.rewrite("/test");
+    return context.rewrite("/");
   }
   console.log(`Transforming the response from this ${url}`);
 
@@ -15,4 +15,4 @@ export default async (request: Request, context: Context) => {
   return new Response(text.toUpperCase(), response);
 };
 
-export const config = { path: '/' };
+export const config = { path: '/transform' };
