@@ -16,4 +16,4 @@ export default async (request: Request, context: Context) => {
   return new Response(text.toUpperCase(), response);
 };
 
-export const config = { path: '/transform' };
+export const config = { path: '/' };
