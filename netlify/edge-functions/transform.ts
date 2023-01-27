@@ -5,9 +5,8 @@ export default async (request: Request, context: Context) => {
 
   // Look for the query parameter, and return if we don't find it
   if (url.searchParams.get("method") !== "transform") {
-    return;
+    return context.rewrite("/test");
   }
-
   console.log(`Transforming the response from this ${url}`);
 
   const response = await context.next();
